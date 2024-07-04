@@ -43,22 +43,22 @@ The first line contains two space separated integers,n and k.
 */
 
 export function superDigit(n: string, k: number): number {
-    // Base case: if n is a single digit return it
-    if(n.length === 1){
+    // Base case: if n is a single digit, return it
+    if (n.length === 1) {
         return parseInt(n, 10);
     }
-
+    
     // Calculate sum of digits of n
     let sum = 0;
-    for(let i = 0; i < n.length; i++){
+    for (let i = 0; i < n.length; i++) {
         sum += parseInt(n[i], 10);
     }
-
-    // Multiply sum by k
+    
+    // Multiply sum by k (if k > 1)
     sum *= k;
-
-    // Recursively call superDigit with sum as string
-    return superDigit(sum.toString(), 10);
+    
+    // Recursively calculate super digit of the resulting sum
+    return superDigit(sum.toString(), 1);
 }
 
 /*
