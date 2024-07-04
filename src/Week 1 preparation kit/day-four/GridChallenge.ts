@@ -69,18 +69,19 @@ uvwxy
 */
 
 export function gridChallenge(grid: string[]): string {
+  if (grid.length === 0) {
+    return "YES"; // Edge case for empty grid
+  }
   // Sort each row of the grid alphabetically
   const sortedRows = grid.map((row) => row.split("").sort().join(""));
 
   // Check if columns are sorted
-  const n = sortedRows.length;
   const m = sortedRows[0].length;
 
   for (let col = 0; col < m; col++) {
-    for (let row = 1; row < n; row++) {
-      if (sortedRows[row][col] < sortedRows[row - 1][col]) {
-        return "NO";
-      }
+    const column = sortedRows.map((row) => row[col]);
+    if (!column.every((val, i) => i === 0 || val >= column[i - 1])) {
+      return "NO";
     }
   }
 
