@@ -60,3 +60,12 @@ export function superDigit(n: string, k: number): number {
     // Recursively call superDigit with sum as string
     return superDigit(sum.toString(), 10);
 }
+
+/*
+Explanation of the Function
+
+	1.	Base Case: If the string n has only one digit (length is 1), convert it to a number and return.
+	2.	Sum Calculation: Calculate the sum of all digits in the string n.
+	3.	Multiplication by k: Multiply the sum by k to handle the repetition factor.
+	4.	Recursive Call: Recursively call superDigit on the resulting sum to continue reducing it until a single digit is obtained.
+*/
