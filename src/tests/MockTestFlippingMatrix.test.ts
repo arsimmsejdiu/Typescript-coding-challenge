@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { flippingMatrix } from "../Week 1 preparation kit/day-two/MockTest";
 
-describe("Flipping Matrix", () => {
+describe("Flipping Matrix mock test", () => {
   it("should return the correct sum for  a 2 x 2 matrix", () => {
     const matrix = [
       [1, 2],

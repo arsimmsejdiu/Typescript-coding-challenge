@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { findMedian } from "../Week 1 preparation kit/day-one/MockTest";
 
-describe("Find Median", () => {
+describe("Find Median mock test", () => {
   it("should return the median when the array length is odd", () => {
     const arr = [3, 2, 1];
     const result = findMedian(arr);
